@@ -1,0 +1,6 @@
+[submodule "spring-shop"]
+	path = spring-shop
+	url = git@github.com:andersonHSM/spring-shop.git
+[submodule "angular-shop"]
+	path = angular-shop
+	url = git@github.com:andersonHSM/angular-shop.git
