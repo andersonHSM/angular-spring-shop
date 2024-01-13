@@ -1,0 +1,32 @@
+services:
+  shop-backend:
+    container_name: shop-backend
+    build:
+      context: spring-shop
+      dockerfile: Dockerfile.dev
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./spring-shop:/app
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: ${DATABASE_NAME}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+      POSTGRES_USER: ${DATABASE_USER}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql
+  redis:
+    image: 'redis:latest'
+    command: redis-server --save 60 1 --loglevel warning
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+volumes:
+  postgres-data:
+    external: true
+  redis-data:
+    external: true
