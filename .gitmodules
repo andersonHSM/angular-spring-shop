@@ -4,3 +4,6 @@
 [submodule "spring-shop-order-service"]
 	path = spring-shop-order-service
 	url = git@github.com:andersonHSM/spring-shop-order-service.git
+[submodule "spring-shop-customer-service"]
+	path = spring-shop-customer-service
+	url = git@github.com:andersonHSM/spring-shop-customer-service.git
